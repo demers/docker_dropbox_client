@@ -9,6 +9,7 @@ services:
     tty: true
     volumes:
       - "data_dropbox:/root/dropbox"
+      - "var/run/docker.sock:/var/run/docker.sock"
     ports:
       - "5000:5000"
     networks:
