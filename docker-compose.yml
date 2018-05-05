@@ -1,0 +1,21 @@
+version: '2.1'
+
+services:
+  dropbox_client:
+    build: .
+    image: dropbox_client
+    container_name: dropbox_client
+    stdin_open: true
+    tty: true
+    volumes:
+      - "data_dropbox:/root/dropbox"
+    ports:
+      - "5000:5000"
+    networks:
+      - dropbox
+
+volumes:
+  data_dropbox:
+
+networks:
+  dropbox:
